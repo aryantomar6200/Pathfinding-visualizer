@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Path finder</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="templet">    
+
+        <header>
+
+            <nav class="top-bar">
+
+                <a href="./index.html" id="logo">Pathfinding Visualizer</a>
+                <button id="Visualize" class="btn">Visualize</button>
+                <ul class="nav-menu">
+
+                    <li><a href="#" id="clearPath">Clear Path</a></li>
+                    <li><a href="#" id="clearBoard">Clear Board</a></li>
+                    <li><a href="#" id="GenerateMazebtn">Generate Maze</a></li>
+
+
+                    <li class="drop-box ">
+
+                        <a href="#">Pixel <span class="caret"></span></a>
+                        <ul class="drop-menu">
+                            <li><a href="#">14px</a></li>
+                            <li><a href="#">16px</a></li>
+                            <li><a href="#">18px</a></li>
+                            <li><a href="#">20px</a></li>
+                            <li class="active"><a href="#">22px</a></li>
+                            <li><a href="#">24px</a></li>
+                            <li><a href="#">26px</a></li>
+                        </ul>
+                    
+                    </li>
+                        
+
+
+                    <li class="drop-box">
+                        <a href="#">Algorithms <span class="caret"></span></a>
+                        <ul class="drop-menu">
+                            <li><a href="#">Dijkstra's Algorithm</a></li>
+                            <li><a href="#">Greedy Algorithm</a></li>
+                            <li class="active"><a href="#">BFS</a></li>
+                            
+                        </ul>
+                    
+                    </li>
+                </ul>
+
+            </nav>
+            
+            <ul class="guide-bar">
+
+                <li>
+                    <div class="icon source"></div>
+                    <span class="text">Source</span>
+                </li>
+
+                <li>
+                    <div class="icon target"></div>
+                    <span class="text">Target</span>
+                </li>
+
+                <li>
+                    <div class="icon unvisited"></div>
+                    <span class="text">Unvisited</span>
+                </li>
+
+                <li>
+                    <div class="icon visited"></div>
+                    <span class="text">Visited</span>
+                </li>
+
+                <li>
+                    <div class="icon wall"></div>
+                    <span class="text">Wall</span>
+                </li>
+
+                <li>
+                    <div class="icon path"></div>
+                    <span class="text">Path</span>
+                </li>
+
+            </ul>
+
+        </header>
+
+        <div id="board">
+            <!-- implemented through JS -->
+        </div>
+
+    </div>
+    
+
+
+    <script src="js/index.js"></script>
+
+</body>
+</html>
+
+
