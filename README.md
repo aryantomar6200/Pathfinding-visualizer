@@ -1,5 +1,5 @@
 # Pathfinding-visualizer
-[Live Demo]([https://path-explorer.netlify.app](https://pathfinding-visualizer-kappa-ten.vercel.app/#)) 
+[Live Demo](https://pathfinding-visualizer-kappa-ten.vercel.app/#) 
 
 ## Overview  
 **PathFinderVisualizer** is an interactive web application developed using pure JavaScript that visualizes various pathfinding algorithms. This tool enables users to experiment with custom mazes, explore algorithmic behavior, and gain a deeper understanding of how pathfinding works in real-time.  
@@ -28,7 +28,7 @@
 - **Logic:** JavaScript for algorithm implementation and grid rendering.  
 
 ## How to Use  
-1. Visit the live demo: [Path Finder Visualizer]([https://path-explorer.netlify.app](https://pathfinding-visualizer-kappa-ten.vercel.app/#)).  
+1. Visit the live demo: [Path Finder Visualizer](https://pathfinding-visualizer-kappa-ten.vercel.app/#).  
 2. Use the mouse to create walls by clicking and dragging on the grid.  
 3. Set the **start** and **end** points by clicking on the respective nodes.  
 4. Select a pathfinding algorithm from the menu.  
