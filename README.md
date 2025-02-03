@@ -1,4 +1,4 @@
-# Pathfinding-visualizer
+# Pathfinding-Visualizer
 
 [Live Demo](https://pathfinding-visualizer-kappa-ten.vercel.app/#) 
 
