@@ -154,10 +154,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
         return {x,y};
     } 
 
-    // let sourcecordinate = set('source');
-    // let targetcordinate = set('target');
-    
-
 
     let isdrawing = false;
     let isdragging = false; 
@@ -195,7 +191,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
                         cell.classList.remove(`${dragpoint}`);
                     })
 
-                    //document.querySelector(`.${dragpoint}`).classList.remove(`${dragpoint}`);
+    
     
                     
                     e.target.classList.add(`${dragpoint}`);
@@ -294,8 +290,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
             for(let i=0; i<row; i++){
                 if(!matrix[i][0].classList.contains('source') && !matrix[i][0].classList.contains('target')){
                     walltoAnimate.push(matrix[i][0]);
-                    
-                    //matrix[i][0].classList.add('wall');
+         
                 }
                 if(!matrix[i][col-1].classList.contains('source')&& !matrix[i][col-1].classList.contains('target')){
                     walltoAnimate.push(matrix[i][col-1]);
@@ -370,11 +365,11 @@ document.addEventListener('DOMContentLoaded', ()=>{
                 walltoAnimate.push(cell);
             }
 
-            //left
+            //Left Subdivision
             
             generateMaze(rowstart, rowend, colstart, currcol-2, surroundingwall, (rowend - rowstart > (currcol-2) - colstart)? 'horizontal' : 'vertical');
             
-            //right
+            //Right Subdivision
             generateMaze(rowstart, rowend, currcol+2, colend, surroundingwall, (rowend - rowstart > colend - (currcol+2))? 'horizontal' : 'vertical');
                 
         }
@@ -411,9 +406,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
             default:
                 break;
         }
-        //BSF();
-        //Dijsktra();
-        //Greedy();
+
         animate(visitedcell, 'visited');
     })
 
@@ -434,17 +427,17 @@ document.addEventListener('DOMContentLoaded', ()=>{
             visitedcell.push(matrix[current.x][current.y]);
             
 
-            //you found the target 
+            //Target Found
             if(current.x === targetcordinate.x && current.y === targetcordinate.y){
                 getpath(parent, targetcordinate);
                 return;
             }
 
             const neighbours =[
-                {x: current.x - 1, y: current.y},   //up
-                {x: current.x, y: current.y + 1},   //right
-                {x: current.x + 1, y: current.y},   //bottom
-                {x: current.x, y: current.y - 1}    //left
+                {x: current.x - 1, y: current.y}, 
+                {x: current.x, y: current.y + 1},   
+                {x: current.x + 1, y: current.y}, 
+                {x: current.x, y: current.y - 1}    
             ];
 
             for(const negighbour of neighbours){
@@ -453,7 +446,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
                 if(isvalid(negighbour.x, negighbour.y) && !visited.has(key)  && !matrix[negighbour.x][negighbour.y].classList.contains('wall')){
                     queue.push(negighbour);
                     visited.add(key);
-                    parent.set(key, current);    //key -> child hai current -> key hai
+                    parent.set(key, current);  
                 }
             }
 
@@ -591,17 +584,16 @@ document.addEventListener('DOMContentLoaded', ()=>{
             visitedcell.push(matrix[current.x][current.y]);
             
 
-            //you found the target 
             if(current.x === targetcordinate.x && current.y === targetcordinate.y){
                 getpath(parent, targetcordinate);
                 return;
             }
 
             const neighbours =[
-                {x: current.x - 1, y: current.y},   //up
-                {x: current.x, y: current.y + 1},   //right
-                {x: current.x + 1, y: current.y},   //bottom
-                {x: current.x, y: current.y - 1}    //left
+                {x: current.x - 1, y: current.y},
+                {x: current.x, y: current.y + 1}, 
+                {x: current.x + 1, y: current.y},  
+                {x: current.x, y: current.y - 1}    
             ];
 
             for(const negighbour of neighbours){
@@ -610,7 +602,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
                 if(isvalid(negighbour.x, negighbour.y) && !matrix[negighbour.x][negighbour.y].classList.contains('wall')){
 
 
-                    //assuming edge weight is 1 between adjacent nodes
+                    //Assuming edge weight is 1 between adjacent nodes
                     const edgeweight = 1;
                     const distancetoneighbour = distancesofar + edgeweight;
 
@@ -618,7 +610,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
                         distance[negighbour.x][negighbour.y] = distancetoneighbour;
                         pq.push({cordinate: negighbour, cost: distancetoneighbour});
-                        parent.set(key, current);    //key -> child hai current -> key hai
+                        parent.set(key, current);  
                     }
                     
                 }
@@ -656,17 +648,17 @@ document.addEventListener('DOMContentLoaded', ()=>{
             visitedcell.push(matrix[current.x][current.y]);
             
 
-            //you found the target 
+            
             if(current.x === targetcordinate.x && current.y === targetcordinate.y){
                 getpath(parent, targetcordinate);
                 return;
             }
 
             const neighbours =[
-                {x: current.x - 1, y: current.y},   //up
-                {x: current.x, y: current.y + 1},   //right
-                {x: current.x + 1, y: current.y},   //bottom
-                {x: current.x, y: current.y - 1}    //left
+                {x: current.x - 1, y: current.y},   
+                {x: current.x, y: current.y + 1}, 
+                {x: current.x + 1, y: current.y},   
+                {x: current.x, y: current.y - 1}  
             ];
 
             for(const negighbour of neighbours){
@@ -675,7 +667,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
                 if(isvalid(negighbour.x, negighbour.y) && !visited.has(key)  && !matrix[negighbour.x][negighbour.y].classList.contains('wall')){
                     queue.push({cordinate: negighbour, cost: heuristicValue(negighbour)});
                     visited.add(key);
-                    parent.set(key, current);    //key -> child hai current -> key hai
+                    parent.set(key, current);  
                 }
             }
 
